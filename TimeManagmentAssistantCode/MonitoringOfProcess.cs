@@ -12,8 +12,8 @@ namespace TimeManagementAssistantCode;
 {
     public static bool Check()
     {
-       
-       bool notepadIsRunning  = Process.GetProcessesByName("devenv").Length > 0;
+        string LinkOfProcess = File.ReadLines(@"C:\Users\Dead Ghoul\AppData\Local\Temp\TimeManagmentAssistant_process.txt").First();
+        bool notepadIsRunning  = Process.GetProcessesByName(LinkOfProcess).Length > 0;
         return notepadIsRunning;
     }
 

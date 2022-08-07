@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Diagnostics;
+using System.ComponentModel;
 namespace TimeManagementAssistant
 {
     public partial class MainForm : Form
@@ -34,6 +36,8 @@ namespace TimeManagementAssistant
                 using (StreamWriter sw = FileOfProcess.CreateText())
                 {
                     sw.WriteLine(textBox_process.Text);
+                    sw.WriteLine(textBox_time.Text);
+                    sw.WriteLine(textBox_audio.Text);
 
                 }
             }
@@ -42,13 +46,17 @@ namespace TimeManagementAssistant
                 {
                     
                     sw.WriteLine(textBox_process.Text);
+                    sw.WriteLine(textBox_time.Text);
+                    sw.WriteLine(textBox_audio.Text);
                 }
 
             }
-           
-           
-            
+            Process.Start(@"C:\Users\Dead Ghoul\source\repos\TimeManagementAssistant\TimeManagmentAssistantCode\bin\Debug\net6.0\TimeManagmentAssistantCode.exe");
+
+
+
         }
 
+        
     }
 }
