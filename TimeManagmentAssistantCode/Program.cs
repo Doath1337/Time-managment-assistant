@@ -8,17 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Media;
 using System.Numerics;
+using System.Reflection;
 using Microsoft.Win32;
+using System.Diagnostics;
 
 namespace TimeManagementAssistantCode;
 
 class Program
 {
-    const string name = "MyTestApplication";
+    const string name = "TimeManager";
     static public bool SetAutorunValue(bool autorun)
     {
-        string ExePath = System.Reflection.Assembly.GetEntryAssembly().Location;
-
+        string ExePath = Environment.CurrentDirectory + "\\TimeManagmentAssistantCode.exe";
+         
         RegistryKey reg;
         reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
         try
@@ -46,7 +48,7 @@ class Program
 
     static void ProcessIsActive()
     {
-        long SleepTime;
+       
 
         
         string timeDelay = File.ReadLines(@"C:\Users\Dead Ghoul\AppData\Local\Temp\TimeManagmentAssistant_process.txt").Skip(1).First();
@@ -58,11 +60,11 @@ class Program
         { 
         }
         Delay = Delay* 60000;   
-        bool ProcessCheck = ProcessInfo.Check();
+        bool ProcessCheck = Check();
         while (ProcessCheck == true)
         {
             Thread.Sleep(Delay);
-            ProcessCheck = ProcessInfo.Check();
+            ProcessCheck = Check();
             if (ProcessCheck == true)
             {
                 SoundPlayer player = new SoundPlayer(Audio);
@@ -77,13 +79,19 @@ class Program
     }
     static bool CheckOpeningOfProcess()
     {
-        bool ProcessCheck = ProcessInfo.Check();
+        bool ProcessCheck = Check();
         while (ProcessCheck != true)
         {
             Thread.Sleep(180000);
-            ProcessCheck = ProcessInfo.Check();
+            ProcessCheck = Check();
         }
         return ProcessCheck;
+    }
+    public static bool Check()
+    {
+        string LinkOfProcess = File.ReadLines(@"C:\Users\Dead Ghoul\AppData\Local\Temp\TimeManagmentAssistant_process.txt").First();
+        bool notepadIsRunning = Process.GetProcessesByName(LinkOfProcess).Length > 0;
+        return notepadIsRunning;
     }
 }
 
