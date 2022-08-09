@@ -22,13 +22,28 @@ namespace TimeManagementAssistant
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            MaximizeBox = false;
         }
-
+        Form NullTextExeptionError;
         private void button1_Click(object sender, EventArgs e)
         {
+            int num;
+            bool isNum = int.TryParse(textBox_time.Text, out num);
+            if (isNum) { }
+            else
+            {
+                NullTextExeptionError = new NullTextExeptionError();
+                NullTextExeptionError.Show();
+                return;
+            }
+            int NumOfMin = Int32.Parse(textBox_time.Text);
+            if (textBox_audio.Text == "" || textBox_process.Text == "" || textBox_time.Text == ""|| NumOfMin>2000)
+            {
+                NullTextExeptionError.Show();
+                return;
+            }
             string NameOfProcess = textBox_process.Text;
-        
+
             string path = @"C:\Users\Dead Ghoul\AppData\Local\Temp\TimeManagmentAssistant_process.txt";
             FileInfo FileOfProcess = new FileInfo(path);
             if (!FileOfProcess.Exists)
@@ -41,10 +56,11 @@ namespace TimeManagementAssistant
 
                 }
             }
-            else{
+            else
+            {
                 using (StreamWriter sw = FileOfProcess.CreateText())
                 {
-                    
+
                     sw.WriteLine(textBox_process.Text);
                     sw.WriteLine(textBox_time.Text);
                     sw.WriteLine(textBox_audio.Text);
@@ -57,6 +73,6 @@ namespace TimeManagementAssistant
 
         }
 
-        
+
     }
 }
