@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.textBox_process = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,6 +37,19 @@
             this.textBox_time = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_audio = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip7 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.fAQToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.developerRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.fAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.developerRelationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.telegramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip7.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_process
@@ -98,11 +113,103 @@
             this.textBox_audio.Size = new System.Drawing.Size(236, 20);
             this.textBox_audio.TabIndex = 7;
             // 
+            // contextMenuStrip7
+            // 
+            this.contextMenuStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fAQToolStripMenuItem2,
+            this.developerRToolStripMenuItem});
+            this.contextMenuStrip7.Name = "contextMenuStrip7";
+            this.contextMenuStrip7.Size = new System.Drawing.Size(176, 48);
+            // 
+            // fAQToolStripMenuItem2
+            // 
+            this.fAQToolStripMenuItem2.Name = "fAQToolStripMenuItem2";
+            this.fAQToolStripMenuItem2.Size = new System.Drawing.Size(175, 22);
+            this.fAQToolStripMenuItem2.Text = "FAQ";
+            // 
+            // developerRToolStripMenuItem
+            // 
+            this.developerRToolStripMenuItem.Name = "developerRToolStripMenuItem";
+            this.developerRToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.developerRToolStripMenuItem.Text = "Developer relations";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(431, 25);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fAQToolStripMenuItem,
+            this.developerRelationToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // fAQToolStripMenuItem
+            // 
+            this.fAQToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fAQToolStripMenuItem.Image")));
+            this.fAQToolStripMenuItem.Name = "fAQToolStripMenuItem";
+            this.fAQToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fAQToolStripMenuItem.Text = "FAQ";
+            this.fAQToolStripMenuItem.Click += new System.EventHandler(this.fAQToolStripMenuItem_Click_1);
+            // 
+            // developerRelationToolStripMenuItem
+            // 
+            this.developerRelationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.telegramToolStripMenuItem,
+            this.vKToolStripMenuItem,
+            this.mailToolStripMenuItem});
+            this.developerRelationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("developerRelationToolStripMenuItem.Image")));
+            this.developerRelationToolStripMenuItem.Name = "developerRelationToolStripMenuItem";
+            this.developerRelationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.developerRelationToolStripMenuItem.Text = "Developer relation";
+            // 
+            // telegramToolStripMenuItem
+            // 
+            this.telegramToolStripMenuItem.Name = "telegramToolStripMenuItem";
+            this.telegramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.telegramToolStripMenuItem.Text = "Telegram";
+            this.telegramToolStripMenuItem.Click += new System.EventHandler(this.telegramToolStripMenuItem_Click);
+            // 
+            // vKToolStripMenuItem
+            // 
+            this.vKToolStripMenuItem.Name = "vKToolStripMenuItem";
+            this.vKToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vKToolStripMenuItem.Text = "VK";
+            this.vKToolStripMenuItem.Click += new System.EventHandler(this.vKToolStripMenuItem_Click);
+            // 
+            // mailToolStripMenuItem
+            // 
+            this.mailToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyToolStripMenuItem});
+            this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
+            this.mailToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mailToolStripMenuItem.Text = "Mail";
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(431, 589);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.textBox_audio);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_time);
@@ -116,6 +223,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TimeManagementAssistant";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.contextMenuStrip7.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,6 +240,17 @@
         private System.Windows.Forms.TextBox textBox_time;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_audio;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip7;
+        private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem developerRToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem fAQToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem developerRelationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem telegramToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vKToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
     }
 }
 
