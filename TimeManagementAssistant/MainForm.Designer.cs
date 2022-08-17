@@ -48,16 +48,17 @@
             this.vKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             this.contextMenuStrip7.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_process
             // 
-            this.textBox_process.Location = new System.Drawing.Point(100, 88);
+            this.textBox_process.Location = new System.Drawing.Point(100, 79);
             this.textBox_process.Multiline = true;
             this.textBox_process.Name = "textBox_process";
-            this.textBox_process.Size = new System.Drawing.Size(236, 16);
+            this.textBox_process.Size = new System.Drawing.Size(236, 22);
             this.textBox_process.TabIndex = 0;
             // 
             // label1
@@ -81,6 +82,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(100, 338);
             this.button1.Name = "button1";
@@ -108,7 +110,7 @@
             // 
             // textBox_audio
             // 
-            this.textBox_audio.Location = new System.Drawing.Point(100, 219);
+            this.textBox_audio.Location = new System.Drawing.Point(100, 274);
             this.textBox_audio.Name = "textBox_audio";
             this.textBox_audio.Size = new System.Drawing.Size(236, 20);
             this.textBox_audio.TabIndex = 7;
@@ -172,20 +174,20 @@
             this.mailToolStripMenuItem});
             this.developerRelationToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("developerRelationToolStripMenuItem.Image")));
             this.developerRelationToolStripMenuItem.Name = "developerRelationToolStripMenuItem";
-            this.developerRelationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.developerRelationToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.developerRelationToolStripMenuItem.Text = "Developer relation";
             // 
             // telegramToolStripMenuItem
             // 
             this.telegramToolStripMenuItem.Name = "telegramToolStripMenuItem";
-            this.telegramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.telegramToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.telegramToolStripMenuItem.Text = "Telegram";
             this.telegramToolStripMenuItem.Click += new System.EventHandler(this.telegramToolStripMenuItem_Click);
             // 
             // vKToolStripMenuItem
             // 
             this.vKToolStripMenuItem.Name = "vKToolStripMenuItem";
-            this.vKToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vKToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.vKToolStripMenuItem.Text = "VK";
             this.vKToolStripMenuItem.Click += new System.EventHandler(this.vKToolStripMenuItem_Click);
             // 
@@ -194,21 +196,35 @@
             this.mailToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToolStripMenuItem});
             this.mailToolStripMenuItem.Name = "mailToolStripMenuItem";
-            this.mailToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mailToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.mailToolStripMenuItem.Text = "Mail";
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Location = new System.Drawing.Point(100, 217);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(236, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "*CLICK*";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(431, 589);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.textBox_audio);
             this.Controls.Add(this.label3);
@@ -251,6 +267,7 @@
         private System.Windows.Forms.ToolStripMenuItem vKToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }
 

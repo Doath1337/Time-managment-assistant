@@ -41,18 +41,22 @@ class Program
     static void Main(string[] args)
     {
         bool autorun= true;
-        SetAutorunValue(autorun);
-        Program.CheckOpeningOfProcess();
-        ProcessIsActive();
+        SetAutorunValue(autorun); 
+        var docFolder = Environment.GetFolderPath(
+        Environment.SpecialFolder.MyDocuments,
+        Environment.SpecialFolderOption.Create);
+        string path = Path.Combine(docFolder, "TimeManager.txt");
+        Program.CheckOpeningOfProcess(path);
+        ProcessIsActive(path);
     }
 
-    static void ProcessIsActive()
+    static void ProcessIsActive(string path)
     {
        
 
         
-        string timeDelay = File.ReadLines(@"C:\Users\Dead Ghoul\AppData\Local\Temp\TimeManagmentAssistant_process.txt").Skip(1).First();
-        string Audio = File.ReadLines(@"C:\Users\Dead Ghoul\AppData\Local\Temp\TimeManagmentAssistant_process.txt").Skip(2).First();
+        string timeDelay = File.ReadLines(path).Skip(1).First();
+        string Audio = File.ReadLines(path).Skip(2).First();
         if (Int32.TryParse(timeDelay, out int Delay))
         {
         }
@@ -60,11 +64,11 @@ class Program
         { 
         }
         Delay = Delay* 60000;   
-        bool ProcessCheck = Check();
+        bool ProcessCheck = Check(path);
         while (ProcessCheck == true)
         {
             Thread.Sleep(Delay);
-            ProcessCheck = Check();
+            ProcessCheck = Check(path);
             if (ProcessCheck == true)
             {
                 SoundPlayer player = new SoundPlayer(Audio);
@@ -72,26 +76,26 @@ class Program
             }
             else if (ProcessCheck == false)
             {
-                CheckOpeningOfProcess();
+                CheckOpeningOfProcess(path);
             }
         }
         
     }
-    static bool CheckOpeningOfProcess()
+    static bool CheckOpeningOfProcess(string path)
     {
-        bool ProcessCheck = Check();
+        bool ProcessCheck = Check(path);
         while (ProcessCheck != true)
         {
             Thread.Sleep(180000);
-            ProcessCheck = Check();
+            ProcessCheck = Check(path);
         }
         return ProcessCheck;
     }
-    public static bool Check()
+    public static bool Check(string path)
     {
-        string LinkOfProcess = File.ReadLines(@"C:\Users\Dead Ghoul\AppData\Local\Temp\TimeManagmentAssistant_process.txt").First();
-        bool notepadIsRunning = Process.GetProcessesByName(LinkOfProcess).Length > 0;
-        return notepadIsRunning;
+        string LinkOfProcess = File.ReadLines(path).First();
+        bool AppIsRunning = Process.GetProcessesByName(LinkOfProcess).Length > 0;
+        return AppIsRunning;
     }
 }
 
